@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pratik Pachani | Marriage Biodata</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1812;
+    --ink2: #3a3325;
+    --muted: #7a6f5e;
+    --rule: #c8b99a;
+    --gold: #9a7c45;
+    --gold-hi: #c4a060;
+    --bg: #faf7f2;
+    --surface: #f0ebe0;
+    --white: #fffef9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e5ddd0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 31px,
+      rgba(0,0,0,0.012) 31px, rgba(0,0,0,0.012) 32px
+    );
+    padding: 40px 16px;
+    color: var(--ink);
+  }
+
+  /* PAGE */
+  .page {
+    max-width: 820px;
+    margin: auto;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 20px 50px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  /* frame */
+  .frame { position:absolute; inset:10px; border:0.5px solid var(--rule); pointer-events:none; z-index:10; }
+
+  /* corner ornament */
+  .co { position:absolute; z-index:11; width:32px; height:32px; pointer-events:none; }
+  .co svg { width:100%; height:100%; }
+  .co.tl { top:6px; left:6px; }
+  .co.tr { top:6px; right:6px; transform:scaleX(-1); }
+  .co.bl { bottom:6px; left:6px; transform:scaleY(-1); }
+  .co.br { bottom:6px; right:6px; transform:scale(-1); }
+
+  /* HEADER */
+  .header {
+    padding: 50px 56px 40px;
+    text-align: center;
+    border-bottom: 0.5px solid var(--rule);
+    background: var(--bg);
+    position: relative;
+  }
+  .lang-toggle { position:absolute; top:20px; right:24px; display:flex; gap:4px; }
+  .lang-toggle button {
+    font-family:'DM Sans',sans-serif; font-size:10.5px; font-weight:500;
+    letter-spacing:1.5px; text-transform:uppercase;
+    padding:5px 12px; border:0.5px solid var(--rule);
+    background:transparent; color:var(--muted); cursor:pointer; transition:all .2s;
+  }
+  .lang-toggle button.on { background:var(--gold); border-color:var(--gold); color:var(--white); }
+
+  .eyebrow { font-size:9.5px; font-weight:500; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+
+  .photo-ring {
+    width:190px; height:190px; margin:0 auto 22px;
+    border-radius:50%; padding:3.5px;
+    background: conic-gradient(var(--gold-hi) 0deg, var(--rule) 120deg, var(--gold) 240deg, var(--gold-hi) 360deg);
+  }
+  .photo-inner {
+    width:100%; height:100%; border-radius:50%;
+    background:var(--bg); border:4px solid var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-size:3.8rem; overflow:hidden;
+  }
+  .photo-inner img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+
+  .header h1 { font-family:'EB Garamond',serif; font-size:2.7rem; font-weight:600; color:var(--ink); letter-spacing:1px; }
+  .header-sub {
+    display:flex; align-items:center; justify-content:center;
+    gap:12px; margin-top:11px;
+    font-size:10.5px; font-weight:500; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold);
+  }
+  .hdot { width:3px; height:3px; border-radius:50%; background:var(--rule); flex-shrink:0; }
+
+  .rule-ornament { display:flex; align-items:center; gap:10px; width:180px; margin:18px auto 0; }
+  .ro-line { flex:1; height:0.5px; background:var(--rule); }
+  .ro-diamond { width:6px; height:6px; border:0.5px solid var(--gold); transform:rotate(45deg); flex-shrink:0; }
+
+  /* FULL PHOTO AT END */
+  .full-photo-wrap {
+    padding: 34px 46px 40px;
+    text-align: center;
+    background: var(--bg);
+    border-top: 0.5px solid var(--rule);
+  }
+  .full-photo-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .full-photo-head .fp-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 0.5px solid var(--rule);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .full-photo-head .fp-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink2);
+  }
+  .full-photo-wrap img {
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 0.5px solid var(--rule);
+  }
+
+  /* BODY */
+  .body { padding:0 46px 46px; }
+
+  /* SECTION */
+  .section { padding:34px 0; border-bottom:0.5px solid var(--surface); }
+  .section:last-child { border-bottom:none; }
+  .sec-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+  .sec-icon {
+    width:28px; height:28px; flex-shrink:0; border-radius:50%;
+    border:0.5px solid var(--rule); background:var(--bg);
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+  }
+  .sec-title { font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--ink2); }
+  .sec-rule { flex:1; height:0.5px; background:var(--rule); opacity:.6; }
+
+  /* GRID */
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .field {
+    padding:13px 17px;
+    border-left:2px solid var(--rule);
+    background:var(--bg);
+  }
+  .field.a { border-left-color:var(--gold); }
+  .field.full { grid-column:1/-1; }
+  .fl { font-size:9px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+  .fv { font-size:14px; color:var(--ink); line-height:1.4; }
+
+  /* BADGES */
+  .badges { display:flex; flex-wrap:wrap; gap:7px; margin-top:8px; }
+  .badge {
+    font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase;
+    padding:5px 13px; border:0.5px solid var(--rule); color:var(--ink2); background:var(--bg);
+  }
+  .badge.g { border-color:var(--gold); color:var(--gold); }
+
+  /* CONTACT */
+  .contact-row { display:flex; flex-wrap:wrap; gap:10px; }
+  .cpill {
+    display:flex; align-items:center; gap:10px;
+    padding:12px 16px; border:0.5px solid var(--rule);
+    flex:1 1 190px; background:var(--bg);
+  }
+  .cpill-icon {
+    width:30px; height:30px; border-radius:50%;
+    background:var(--surface); border:0.5px solid var(--rule);
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; flex-shrink:0;
+  }
+  .cl { font-size:9.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); }
+  .cv { font-size:13px; font-weight:500; color:var(--ink); word-break:break-all; }
+
+  /* FOOTER */
+  .footer {
+    border-top:0.5px solid var(--rule); padding:16px 46px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--bg);
+  }
+  .ft { font-size:9.5px; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted); }
+  .fo { color:var(--gold); font-size:16px; letter-spacing:6px; }
+
+  @media (max-width:580px) {
+    .header { padding:44px 22px 36px; }
+    .full-photo-wrap { padding: 22px 22px 26px; }
+    .full-photo-wrap img { width: 100%; max-width: 280px; }
+    .body { padding:0 22px 38px; }
+    .footer { padding:16px 22px; }
+    .header h1 { font-size:1.95rem; }
+    .grid { grid-template-columns:1fr; }
+    .field.full { grid-column:auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="frame"></div>
+  <!-- corner ornaments -->
+  <div class="co tl"><svg viewBox="0 0 32 32" fill="none"><path d="M2 30V4a2 2 0 012-2h26" stroke="#9a7c45" stroke-width=".7"/><path d="M7 30V9a2 2 0 012-2h21" stroke="#9a7c45" stroke-width=".35" opacity=".4"/></svg></div>
+  <div class="co tr"><svg viewBox="0 0 32 32" fill="none"><path d="M2 30V4a2 2 0 012-2h26" stroke="#9a7c45" stroke-width=".7"/><path d="M7 30V9a2 2 0 012-2h21" stroke="#9a7c45" stroke-width=".35" opacity=".4"/></svg></div>
+  <div class="co bl"><svg viewBox="0 0 32 32" fill="none"><path d="M2 30V4a2 2 0 012-2h26" stroke="#9a7c45" stroke-width=".7"/><path d="M7 30V9a2 2 0 012-2h21" stroke="#9a7c45" stroke-width=".35" opacity=".4"/></svg></div>
+  <div class="co br"><svg viewBox="0 0 32 32" fill="none"><path d="M2 30V4a2 2 0 012-2h26" stroke="#9a7c45" stroke-width=".7"/><path d="M7 30V9a2 2 0 012-2h21" stroke="#9a7c45" stroke-width=".35" opacity=".4"/></svg></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="lang-toggle">
+      <button class="on" onclick="setLang('en')">EN</button>
+      <button onclick="setLang('gu')">ગુ</button>
+    </div>
+
+    <div class="eyebrow lang-en">Marriage Biodata</div>
+    <div class="eyebrow lang-gu" style="display:none">લગ્ન માટે બાયોડેટા</div>
+
+    <div class="photo-ring">
+      <div class="photo-inner"><img src="profile.jpeg" alt="Pratik Pachani" /></div>
+    </div>
+
+    <h1 class="lang-en">Pratik Maganbhai Pachani</h1>
+    <h1 class="lang-gu" style="display:none">પ્રતીક મગનભાઈ પાચાણી</h1>
+
+    <div class="header-sub">
+      <span class="lang-en">B.COM</span><span class="lang-gu" style="display:none">બી.કોમ</span><div class="hdot"></div>
+      <span class="lang-en">LL.B</span><span class="lang-gu" style="display:none">એલ.એલ.બી</span><div class="hdot"></div>
+      <span class="lang-en">Advocate</span>
+      <span class="lang-gu" style="display:none">એડવોકેટ</span>
+    </div>
+
+    <div class="rule-ornament">
+      <div class="ro-line"></div>
+      <div class="ro-diamond"></div>
+      <div class="ro-line"></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- Personal -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-icon">⚖️</div>
+        <span class="sec-title lang-en">Personal Details</span>
+        <span class="sec-title lang-gu" style="display:none">વ્યક્તિગત માહિતી</span>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="grid">
+        <div class="field a">
+          <div class="fl lang-en">Date of Birth</div>
+          <div class="fl lang-gu" style="display:none">જન્મ તારીખ</div>
+          <div class="fv lang-en">11 April 1998</div>
+          <div class="fv lang-gu" style="display:none">૧૧ એપ્રિલ ૧૯૯૮</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Age</div>
+          <div class="fl lang-gu" style="display:none">ઉંમર</div>
+          <div class="fv lang-en">27 Years</div>
+          <div class="fv lang-gu" style="display:none">27 વર્ષ</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Height</div>
+          <div class="fl lang-gu" style="display:none">ઊંચાઈ</div>
+          <div class="fv lang-en">5′ 8″</div>
+          <div class="fv lang-gu" style="display:none">૫′ ૮″</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Weight</div>
+          <div class="fl lang-gu" style="display:none">વજન</div>
+          <div class="fv lang-en">56 Kg</div>
+          <div class="fv lang-gu" style="display:none">56 કિલો</div>
+        </div>
+        <div class="field a">
+          <div class="fl lang-en">Caste</div>
+          <div class="fl lang-gu" style="display:none">જ્ઞાતિ</div>
+          <div class="fv lang-en">Hindu Leva Patel</div>
+          <div class="fv lang-gu" style="display:none">હિન્દુ લેઉવા પટેલ</div>
+        </div>
+        <div class="field a">
+          <div class="fl lang-en">Occupation</div>
+          <div class="fl lang-gu" style="display:none">વ્યવસાય</div>
+          <div class="fv lang-en">Advocate (Lawyer)</div>
+          <div class="fv lang-gu" style="display:none">એડવોકેટ (વકીલ)</div>
+        </div>
+        <div class="field full">
+          <div class="fl lang-en">Education</div>
+          <div class="fl lang-gu" style="display:none">શિક્ષણ</div>
+          <div class="badges">
+            <span class="badge g lang-en">B.COM</span>
+            <span class="badge g lang-gu" style="display:none">બી.કોમ</span>
+            <span class="badge g lang-en">LL.B</span>
+            <span class="badge g lang-gu" style="display:none">એલ.એલ.બી</span>
+            <span class="badge g lang-en">Advocate</span>
+            <span class="badge g lang-gu" style="display:none">એડવોકેટ</span>
+          </div>
+        </div>
+        <div class="field full">
+          <div class="fl lang-en">Languages Known</div>
+          <div class="fl lang-gu" style="display:none">ભાષાઓ</div>
+          <div class="badges">
+            <span class="badge lang-en">Gujarati</span>
+            <span class="badge lang-en">Hindi</span>
+            <span class="badge lang-en">English</span>
+            <span class="badge lang-gu" style="display:none">ગુજરાતી</span>
+            <span class="badge lang-gu" style="display:none">હિન્દી</span>
+            <span class="badge lang-gu" style="display:none">અંગ્રેજી</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Family -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-icon">👨‍👩‍👦</div>
+        <span class="sec-title lang-en">Family Background</span>
+        <span class="sec-title lang-gu" style="display:none">પારિવારિક પૃષ્ઠભૂમિ</span>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="grid">
+        <div class="field a">
+          <div class="fl lang-en">Father</div>
+          <div class="fl lang-gu" style="display:none">પિતા</div>
+          <div class="fv lang-en">Maganbhai Lavabhai Pachani</div>
+          <div class="fv lang-gu" style="display:none">મગનભાઈ લવાભાઈ પાચાણી</div>
+        </div>
+        <div class="field a">
+          <div class="fl lang-en">Mother</div>
+          <div class="fl lang-gu" style="display:none">માતા</div>
+          <div class="fv lang-en">Bhanuben Maganbhai Pachani</div>
+          <div class="fv lang-gu" style="display:none">ભાનુબેન મગનભાઈ પાચાણી</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Sibling</div>
+          <div class="fl lang-gu" style="display:none">ભાઈ-બહેન</div>
+          <div class="fv lang-en">Paras Maganbhai Pachani (Younger Brother)</div>
+          <div class="fv lang-gu" style="display:none">પારસ મગનભાઈ પાચાણી (નાનો ભાઈ)</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Native Place</div>
+          <div class="fl lang-gu" style="display:none">વતન</div>
+          <div class="fv lang-en">Devgam, Ta. Kukavav, Dist. Amreli</div>
+          <div class="fv lang-gu" style="display:none">દેવગામ, તા. કુકાવાવ, જિ. અમરેલી</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maternal -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-icon">🏡</div>
+        <span class="sec-title lang-en">Maternal Details</span>
+        <span class="sec-title lang-gu" style="display:none">મોસાળ વિગત</span>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="grid">
+        <div class="field a">
+          <div class="fl lang-en">Maternal Uncle</div>
+          <div class="fl lang-gu" style="display:none">મામા</div>
+          <div class="fv lang-en">Vinubhai Jivrajbhai Kikani</div>
+          <div class="fv lang-gu" style="display:none">વિનુભાઈ જીવરાજભાઈ કિકાણી</div>
+        </div>
+        <div class="field">
+          <div class="fl lang-en">Maternal Place</div>
+          <div class="fl lang-gu" style="display:none">મોસાળ ગામ</div>
+          <div class="fv lang-en">Lunidhar, Ta. Kukavav, Dist. Amreli</div>
+          <div class="fv lang-gu" style="display:none">લુણીઘાર, તા. કુકાવાવ, જિ. અમરેલી</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-icon">📞</div>
+        <span class="sec-title lang-en">Contact Details</span>
+        <span class="sec-title lang-gu" style="display:none">સંપર્ક વિગત</span>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="contact-row">
+        <div class="cpill">
+          <div class="cpill-icon">📱</div>
+          <div>
+            <div class="cl lang-en">Mobile</div>
+            <div class="cl lang-gu" style="display:none">મોબાઈલ</div>
+            <div class="cv lang-en">8733810553</div>
+            <div class="cv lang-gu" style="display:none">8733810553</div>
+          </div>
+        </div>
+        <div class="cpill">
+          <div class="cpill-icon">👨‍👦</div>
+          <div>
+            <div class="cl lang-en">Father's Contact</div>
+            <div class="cl lang-gu" style="display:none">પિતા સંપર્ક</div>
+            <div class="cv lang-en">9925625010</div>
+            <div class="cv lang-gu" style="display:none">9925625010</div>
+          </div>
+        </div>
+        <div class="cpill">
+          <div class="cpill-icon">✉️</div>
+          <div>
+            <div class="cl lang-en">Email</div>
+            <div class="cl lang-gu" style="display:none">ઈ-મેઈલ</div>
+            <div class="cv lang-en">pratikpachani1998@gmail.com</div>
+            <div class="cv lang-gu" style="display:none">pratikpachani1998@gmail.com</div>
+          </div>
+        </div>
+        <div class="cpill" style="flex-basis:100%;">
+          <div class="cpill-icon">🏠</div>
+          <div>
+            <div class="cl lang-en">Residence</div>
+            <div class="cl lang-gu" style="display:none">સરનામું</div>
+            <div class="cv lang-en">201, Sai Altamount, Ambatalavadi, Katargam, Surat</div>
+            <div class="cv lang-gu" style="display:none">201, સાઈ અલ્ટામાઉન્ટ, અંબાતળાવડી, કતારગામ, સુરત</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <div class="full-photo-wrap">
+    <div class="full-photo-head">
+      <div class="fp-icon">📷</div>
+      <span class="fp-title lang-en">Recent Photo</span>
+      <span class="fp-title lang-gu" style="display:none">તાજેતરનો ફોટો</span>
+    </div>
+    <img src="pratik1.jpeg" alt="Pratik Pachani" />
+  </div>
+
+  <div class="footer">
+    <span class="ft lang-en">Prepared for Marriage Purpose</span>
+    <span class="ft lang-gu" style="display:none">લગ્ન માટે તૈયાર</span>
+    <span class="fo">⸻</span>
+    <span class="ft lang-en">2025</span>
+    <span class="ft lang-gu" style="display:none">૨૦૨૫</span>
+  </div>
+</div>
+
+<script>
+function setLang(lang) {
+  const s = 'lang-'+lang, h = lang==='en'?'lang-gu':'lang-en';
+  document.querySelectorAll('.'+s).forEach(e => e.style.display='');
+  document.querySelectorAll('.'+h).forEach(e => e.style.display='none');
+  document.querySelectorAll('.lang-toggle button').forEach((b,i)=>{
+    b.classList.toggle('on',(lang==='en'&&i===0)||(lang==='gu'&&i===1));
+  });
+}
+</script>
+</body>
+</html>
